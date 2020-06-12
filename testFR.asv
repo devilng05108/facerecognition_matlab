@@ -1,7 +1,4 @@
-%test data
-I = imread('testData-ngchunwu.pgm'); %testData-louis / testData-melvin / testData-ngchunwu / testData-yann
-faceDetector = vision.CascadeObjectDetector;
-faceDetector.MergeThreshold =7;
+I = imread('testData-me.pgm'); %testData-louis / testData-me / testData-ngchunwu / testData-yann
 bboxes = step(faceDetector, I);
     for i = 1 : size(bboxes,1)     
       rectangle('Position', bboxes(i,:), 'LineWidth', 3, 'LineStyle', '-', 'EdgeColor', 'r'); 
@@ -10,7 +7,7 @@ bboxes = step(faceDetector, I);
       J = imcrop(I, bboxes(i, :)); 
       Jr = imresize(J,[112,92]);
       %Jrgb = rgb2gray(Jr);
-      imshow(Jr); 
+      imshow(J); 
     end
 
 [labelIdx, score] = predict(categoryClassifier,J);

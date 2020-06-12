@@ -1,1 +1,4 @@
 Soft computing group assignment
+
+1. Clear workspace before starting.
+2. Run train_logic.m before testFR.m or webcamFD.m

@@ -1,4 +1,4 @@
-faceDatabase = imageSet('FaceDatabaseATT','recursive');
+faceDatabase = imageSet('FaceDatabase','recursive');
 [training,test] = partition(faceDatabase,[0.8 0.2]);
 trainingFeatures = zeros(size(training,2)*training(1).Count,4680);
 featureCount = 1;
