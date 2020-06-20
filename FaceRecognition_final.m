@@ -37,7 +37,7 @@ for k = 1 : numFiles
     end
 end
   
-numTrainFiles =4;
+numTrainFiles =10;
 [imdsTrain,imdsValidation] = splitEachLabel(imds,numTrainFiles,'randomize'); %split 
 
 %define network architecture
@@ -46,7 +46,7 @@ numClasses = 5;
 
 layers = [
     imageInputLayer(inputSize)
-    convolution2dLayer(5,20)
+    convolution2dLayer(5,50)
     batchNormalizationLayer
     reluLayer
     fullyConnectedLayer(numClasses)
@@ -55,7 +55,7 @@ layers = [
 
 %train network
 options = trainingOptions('sgdm', ...
-    'MaxEpochs',4, ...
+    'MaxEpochs',10, ...
     'ValidationData',imdsValidation, ...
     'ValidationFrequency',30, ...
     'Verbose',false, ...
